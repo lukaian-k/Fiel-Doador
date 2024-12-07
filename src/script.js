@@ -18,8 +18,9 @@ download.addEventListener('click', () => {
     const ctx = canvas.getContext('2d');
     const frame = document.getElementById('frame');
 
-    canvas.width = photo.width;
-    canvas.height = photo.height;
+    const aspectRatio = photo.naturalWidth / photo.naturalHeight;
+    canvas.width = 1000;
+    canvas.height = canvas.width / aspectRatio;
 
     ctx.drawImage(photo, 0, 0, canvas.width, canvas.height);
     ctx.drawImage(frame, 0, 0, canvas.width, canvas.height);
